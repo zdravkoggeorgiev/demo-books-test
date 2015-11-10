@@ -10,20 +10,19 @@
                     dataType: "json"
                 }
             },
-        schema: {
-            data: "books"
-        }
-    }),
-        back: function() {
-        },
-        settings: function() {
-        }
+            schema: {
+                data: "books"
+            }
+        }),
+        back: function () {app.navigate("#:back");},
+        settings: function () {app.navigate("views/settings.html")}
     };
 
-    document.addEventListener("deviceready", function () {  
+    document.addEventListener("deviceready", function () {
         navigator.splashscreen.hide();
 
-        app = new kendo.mobile.Application(document.body);
+
+        app = new kendo.mobile.Application(document.body, { layout: "main-layout", transition: "zoom"});
     }, false);
 
     window.app = app;
